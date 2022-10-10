@@ -4,7 +4,6 @@ const http = require("http");
 const { Socket } = require("socket.io");
 const server = http.createServer(app);
 const io = require("socket.io")(server);
-const PORT = 3000;
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
@@ -19,6 +18,6 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(PORT, () => {
+server.listen(process.env.PORT || 3000, () => {
   console.log("listening on PORT:3000!!");
 });

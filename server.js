@@ -21,3 +21,6 @@ io.on("connection", (socket) => {
 server.listen(process.env.PORT || 3000, () => {
   console.log("listening on PORT:3000!!");
 });
+
+process.env.HEROKUURL; //HEROKUデプロイ用の環境変数設定
+process.env.URL; //開発用
